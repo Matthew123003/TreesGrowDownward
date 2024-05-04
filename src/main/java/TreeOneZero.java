@@ -87,15 +87,27 @@ public class TreeOneZero {
     }
 
     public void traverseInOrder(Node node){
-
+        if (node != null) {
+            traverseInOrder(node.left); // Visit left subtree
+            System.out.print(node.value + " "); // Visit current node
+            traverseInOrder(node.right); // Visit right subtree
+        }
     }
 
     public void traversePreOrder(Node node){
-
+        if (node != null) {
+            System.out.print(node.value + " "); // Visit current node
+            traversePreOrder(node.left); // Visit left subtree
+            traversePreOrder(node.right); // Visit right subtree
+        }
     }
 
     public void traversePostOrder(Node node){
-
+        if (node != null) {
+            traversePostOrder(node.left); // Visit left subtree
+            traversePostOrder(node.right); // Visit right subtree
+            System.out.print(node.value + " "); // Visit current node
+        }
     }
 
     public void traverseLevelOrder() {

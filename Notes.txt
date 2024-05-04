@@ -37,3 +37,48 @@ Function addRecursive(currentNode, newValue)
             Set this new node as the right child of currentNode
         Else:
             Call addRecursive with currentNode's right child and newValue
+
+    Class Declaration:
+        public class TreeOneZero: This line declares a class named TreeOneZero.
+
+    Instance Variables:
+        Node root: This variable represents the root node of the binary tree.
+
+    Constructor:
+        No explicit constructor is provided. The class relies on the default constructor.
+
+    Adding Nodes:
+        private Node addRecursive(Node current, Integer value): This method adds a
+        node with the specified value to the binary tree recursively.
+        public void add(Integer value): This method initiates the addition process by
+         calling the addRecursive method with the root node and the value to be added.
+
+    Creating the Binary Tree:
+        public TreeOneZero createBinaryTree(): This method creates a binary tree with
+         predetermined integer values (6, 4, 8, 3, 5, 7, 9) and returns the tree.
+
+    Searching for a Node:
+        private boolean containsNodeRecursive(Node current, Integer value): This method
+         recursively searches for a node with the specified value in the binary tree.
+        public boolean containsNode(Integer value): This method initiates the search
+        process by calling the containsNodeRecursive method with the root node and the
+        value to be searched.
+
+    Deleting a Node:
+        private Node deleteRecursive(Node current, Integer value): This method
+        recursively deletes a node with the specified value from the binary tree.
+        public void delete(Integer value): This method initiates the deletion process
+         by calling the deleteRecursive method with the root node and the value to be
+          deleted.
+        private int findSmallestValue(Node n): This method finds the smallest value in
+         a subtree, which is used during node deletion.
+
+    Tree Traversals:
+        public void traverseInOrder(Node node): This method performs an in-order
+        traversal of the binary tree recursively.
+        public void traversePreOrder(Node node): This method performs a pre-order
+        traversal of the binary tree recursively.
+        public void traversePostOrder(Node node): This method performs a post-order
+         traversal of the binary tree recursively.
+        public void traverseLevelOrder(): This method performs a level-order traversal
+         of the binary tree iteratively using a queue.
