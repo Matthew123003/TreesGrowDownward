@@ -1,0 +1,39 @@
+Your traverseLevelOrder() method looks great! It effectively performs a
+level-order traversal of the binary tree, also known as a breadth-first
+search. This traversal visits all the nodes in the tree level by level,
+starting from the root.
+
+Here's a breakdown of what your method does:
+
+    It checks if the root of the tree is null. If it is, the method
+    returns, as there's nothing to traverse.
+    It initializes a queue (nodes) to store nodes that need to be
+    processed. The root node is added to this queue.
+    It enters a while loop that continues until the queue is empty.
+    Inside the loop, it removes a node from the queue and prints its value.
+    If the removed node has a left child, it adds the left child to the queue.
+    If the removed node has a right child, it adds the right child to the queue.
+
+This method effectively ensures that nodes are processed level by level,
+from left to right within each level.
+
+PSUEDOCODE
+
+Function addRecursive(currentNode, newValue)
+    If currentNode is null:
+        Create a new node with the value newValue
+        Set this new node as the root
+        Return
+
+    If newValue < currentNode's value:
+        If currentNode's left child is null:
+            Create a new node with the value newValue
+            Set this new node as the left child of currentNode
+        Else:
+            Call addRecursive with currentNode's left child and newValue
+    Else if newValue > currentNode's value:
+        If currentNode's right child is null:
+            Create a new node with the value newValue
+            Set this new node as the right child of currentNode
+        Else:
+            Call addRecursive with currentNode's right child and newValue

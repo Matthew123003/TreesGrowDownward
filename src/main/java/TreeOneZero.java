@@ -8,10 +8,20 @@ public class TreeOneZero {
     Node root;
 
     private Node addRecursive(Node current, Integer value){
-        return null;
+        if(current == null){
+            return new Node(value);
+        }
+        if(value < current.value){
+            current.left = addRecursive(current.left, value);
+        }else if(value > current.value){
+            current.right = addRecursive(current.right, value);
+        }
+        return current;
     }
 
-    public void add(Integer value){}
+    public void add(Integer value){
+        addRecursive(this.root, value);
+    }
 
     private TreeOneZero createBinaryTree() {
         TreeOneZero bt = new TreeOneZero();
