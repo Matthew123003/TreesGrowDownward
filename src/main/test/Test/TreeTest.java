@@ -1,12 +1,16 @@
-import com.sun.source.tree.BinaryTree;
+package Test;
+
+import Tree.TreeOneZero;
 import org.junit.Assert;
 import org.junit.Test;
+
+import static Tree.TreeOneZero.createBinaryTree;
 
 public class TreeTest {
 
     @Test
     public void givenABinaryTree_WhenAddingElements_ThenTreeContainsThoseElements() {
-        BinaryTree bt = createBinaryTree();
+        TreeOneZero bt = createBinaryTree();
 
         Assert.assertTrue(bt.containsNode(6));
         Assert.assertTrue(bt.containsNode(4));
@@ -16,7 +20,7 @@ public class TreeTest {
 
     @Test
     public void givenABinaryTree_WhenDeletingElements_ThenTreeDoesNotContainThoseElements() {
-        BinaryTree bt = createBinaryTree();
+        TreeOneZero bt = createBinaryTree();
 
         Assert.assertTrue(bt.containsNode(9));
         bt.delete(9);

@@ -225,28 +225,30 @@ For the implementation, we'll use a Queue to hold the nodes from each level in o
 This is the most complex of the routines, and it's a gift :-)
 
 ```java
+import Tree.Node;
+
 public void traverseLevelOrder() {
-    if (root == null) {
-        return;
+  if (root == null) {
+    return;
+  }
+
+  Queue<Node> nodes = new LinkedList<>();
+  nodes.add(root);
+
+  while (!nodes.isEmpty()) {
+
+    Node node = nodes.remove();
+
+    System.out.print(" " + node.value);
+
+    if (node.left != null) {
+      nodes.add(node.left);
     }
- 
-    Queue<Node> nodes = new LinkedList<>();
-    nodes.add(root);
- 
-    while (!nodes.isEmpty()) {
- 
-        Node node = nodes.remove();
- 
-        System.out.print(" " + node.value);
- 
-        if (node.left != null) {
-            nodes.add(node.left);
-        }
- 
-        if (node.right != null) {
-            nodes.add(node.right);
-        }
+
+    if (node.right != null) {
+      nodes.add(node.right);
     }
+  }
 }
 ```
 

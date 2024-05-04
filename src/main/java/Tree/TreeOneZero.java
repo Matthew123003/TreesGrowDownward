@@ -1,3 +1,5 @@
+package Tree;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -20,19 +22,19 @@ public class TreeOneZero {
     }
 
     public void add(Integer value){
-        addRecursive(this.root, value);
+        this.root = addRecursive(this.root, value);
     }
 
-    public TreeOneZero createBinaryTree() {
+    public static TreeOneZero createBinaryTree() {
         TreeOneZero bt = new TreeOneZero();
 
-        bt.add(new Integer(6));
-        bt.add(new Integer(4));
-        bt.add(new Integer(8));
-        bt.add(new Integer(3));
-        bt.add(new Integer(5));
-        bt.add(new Integer(7));
-        bt.add(new Integer(9));
+        bt.add(6);
+        bt.add(4);
+        bt.add(8);
+        bt.add(3);
+        bt.add(5);
+        bt.add(7);
+        bt.add(9);
 
         return bt;
     }
@@ -52,7 +54,7 @@ public class TreeOneZero {
     }
 
     public boolean containsNode(Integer value){
-        return containsNodeRecursive(root, value);
+        return containsNodeRecursive(this.root, value);
     }
 
     private Node deleteRecursive(Node current, Integer value){
