@@ -23,7 +23,7 @@ public class TreeOneZero {
         addRecursive(this.root, value);
     }
 
-    private TreeOneZero createBinaryTree() {
+    public TreeOneZero createBinaryTree() {
         TreeOneZero bt = new TreeOneZero();
 
         bt.add(new Integer(6));
@@ -38,19 +38,52 @@ public class TreeOneZero {
     }
 
     private boolean containsNodeRecursive(Node current, Integer value){
-        return true;
+        if(current == null){
+            return false;
+        }
+        if(current.value == value){
+            return true;
+        }
+        if(current.value > value){
+            return containsNodeRecursive(current.left, value);
+        }else{
+            return containsNodeRecursive(current.right, value);
+        }
+    }
+
+    public boolean containsNode(Integer value){
+        return containsNodeRecursive(root, value);
     }
 
     private Node deleteRecursive(Node current, Integer value){
-        return null;
-    }
+        if(current == null){
+            return null;
+        }
+        if(value == current.value) {
+            if (current.right == null) {
+                return current.left;
+            }
+            if (current.left == null) {
+                return current.right;
+            }
+        }
+        current.value = findSmallestValue(current.right);
+        current.right = deleteRecursive(current.right, current.value);
+        if (value < current.value) {
+        current.left = deleteRecursive(current.left, value);
+        } else {
+        current.right = deleteRecursive(current.right, value);
+        }
+        return current;
 
-    private int findSmallestValue(Node n){
-        return 0;
     }
 
     public void delete(Integer value){
+        root = deleteRecursive(root, value);
+    }
 
+    private int findSmallestValue(Node n){
+        return n.left == null ? n.value : findSmallestValue(n.left);
     }
 
     public void traverseInOrder(Node node){
